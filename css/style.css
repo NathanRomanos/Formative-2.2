@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+.navbar {
+  background-color: #333; }
+
+/*# sourceMappingURL=style.css.map */
