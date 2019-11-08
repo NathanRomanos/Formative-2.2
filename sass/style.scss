@@ -2,5 +2,27 @@
 
 
 .navbar{
-  background-color: lightgrey;
+  background-color: grey;
+}
+
+.container{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.col{
+  margin-top: 20px;
+}
+
+.card{
+  background-color: rgba(225, 225, 225, 0.4);
+  border-color: white;
+}
+
+.card:hover{
+  cursor: pointer;
+}
+
+.card:active{
+  transform: scale(0.95);
 }

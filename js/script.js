@@ -1,8 +1,9 @@
 
 var jackets = [
   {
-    name : "Air Force Bomber Jacket",
+    name : "Flight Bomber Jacket",
     id : "j101",
+    price : 23,
     photo : "/images/airForce.jpeg",
     type : "bomber jacket",
     size : "M",
@@ -13,6 +14,7 @@ var jackets = [
   {
     name : "Acne Studios Leather Jacket",
     id : "j102",
+    price : 25,
     photo : "/images/leather.jpg",
     type : "leather jacket",
     size : "L",
@@ -23,6 +25,7 @@ var jackets = [
   {
     name : "Gloverall Duffle Coat",
     id : "j103",
+    price : 36,
     photo : "/images/duffle.jpg",
     type : "duffle coat",
     size : "L",
@@ -33,6 +36,7 @@ var jackets = [
   {
     name : "Ecocult Vintage Leather Jacket",
     id : "j104",
+    price : 6,
     photo : "/images/vintageLeather.jpg",
     type : "leather jacket",
     size : "S",
@@ -43,6 +47,7 @@ var jackets = [
   {
     name : "Belstaff Biker Jacket",
     id : "j105",
+    price : 28,
     photo : "/images/biker.jpg",
     type : "biker jacket",
     size : "M",
@@ -53,6 +58,7 @@ var jackets = [
   {
     name : "Barbour Hereford Wax Jacket",
     id : "j106",
+    price : 36,
     photo : "/images/waxed.jpg",
     type : "waxed jacket",
     size : "L",
@@ -63,6 +69,7 @@ var jackets = [
   {
     name : "Topman Denim Jacket",
     id : "j107",
+    price : 32,
     photo : "/images/denim.jpeg",
     type : "denim jacket",
     size : "S",
@@ -71,8 +78,9 @@ var jackets = [
     para : "velvet, denim, strap detailing, solid color, medium wash, long sleeves, classic neckline, strapped cuffs, single-breasted , button closing, multipockets"
   },
   {
-    name : "Jaycargogo Vintage Shearling Trucker Jacket",
+    name : "Vintage Shearling Trucker Jacket",
     id : "j108",
+    price : 28,
     photo : "/images/sherling.jpg",
     type : "searling jacket",
     size : "S",
@@ -81,18 +89,20 @@ var jackets = [
     para : "It's a stupid jacket. Buy it or leave it"
   },
   {
-    name : "",
-    id : "",
-    photo : "/images/.jpg",
-    type : "",
-    size : "",
-    colour : "",
-    join : "",
-    para : ""
+    name : "Converse Puffer Jacket",
+    id : "j109",
+    price : 15.50,
+    photo : "/images/puffer.jpg",
+    type : "puffer",
+    size : "S",
+    colour : "black",
+    join : "zip",
+    para : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     name : "UrbanCrews Long Sleeve Hooded Denim Jacket",
     id : "j110",
+    price : 31,
     photo : "/images/hoodedDenim.jpg",
     type : "denim jacket",
     size : "M",
@@ -101,55 +111,76 @@ var jackets = [
     para : "Please Check the Size Chart (*Last Image*) Before Ordering | Please Note: Difference in Manual Measurements May Exists. Compare These Measurements To a Similar Garment You Own From the Outside, Laid Flat. A Certain Size May Not Conform To All Body Types."
   },
   {
-    name : "",
-    id : "",
-    photo : "/images/.jpg",
-    type : "",
-    size : "",
-    colour : "",
-    join : "",
-    para : ""
+    name : "Firetrap Quilted Bomber Jacket",
+    id : "j111",
+    price : 14,
+    photo : "/images/quilted.jpg",
+    type : "bomber jacket",
+    size : "S",
+    colour : "dark green",
+    join : "zip",
+    para : "Firetrap Quilted Bomber Junior Boys Stay warm in the cold weather with the Firetrap Bomber Jacket. It's a quilted design with a full zip fastening, long sleeves and ribbed neckline. The jacket features two hand pockets for storage, an inside pocket and Firetrap branding completes the design. > Boys bomber jacket > Full zip fastening > Long sleeves > Quilted > Ribbed collar > Ribbed cuffs and hem > 2 hand pockets > 1 inside pockets > Firetrap branding > 100% polyester > Machine washable > Keep away from fire"
   },
   {
-    name : "",
-    id : "",
-    photo : "/images/.jpg",
-    type : "",
-    size : "",
-    colour : "",
-    join : "",
-    para : ""
+    name : "Pilot Pete Leather Flight Jacket",
+    id : "j112",
+    price : 42,
+    photo : "/images/leatherFlight.jpg",
+    type : "bomber jacket",
+    size : "S",
+    colour : "dark brown and saddle brown",
+    join : "zip",
+    para : "Undoubtedly, the most famous and well recognized sheepskin flight jacket developed by the U.S. Army Air Force was the “Type B-3”. The first B-3 design emerged in 1934. At that time, advances in aviation made possible aircraft able to fly at altitudes above 20,000 feet. Temperatures at high altitudes frequently were below minus 40 during winter months. Because aircraft then being designed were unheated and uninsulated, aircrews needed protection against the bone chilling cold in order to fly."
   },
   {
-    name : "",
-    id : "",
-    photo : "/images/.jpg",
-    type : "",
-    size : "",
-    colour : "",
-    join : "",
-    para : ""
+    name : "Lightweight, Waterproof Hi-Vis Jacket",
+    id : "j113",
+    price : 34,
+    photo : "/images/hiVis.jpg",
+    type : "hi-vis jacket",
+    size : "L",
+    colour : "slate blue and fluro orange",
+    join : "zip and button",
+    para : "Simple as"
   },
   {
-    name : "",
-    id : "",
-    photo : "/images/.jpg",
-    type : "",
-    size : "",
-    colour : "",
-    join : "",
-    para : ""
+    name : "Yves Saint Laurent Fur Coat",
+    id : "j114",
+    price : 4,
+    photo : "/images/fur.jpeg",
+    type : "fur coat",
+    size : "M",
+    colour : "brown",
+    join : "zip",
+    para : "vintage 70 in good condition this faux fur coat Yves Saint Laurent size 38/40 see dimensions !! - cut short coat - material polyester very beautiful imitation effect mink - interior silk monogram YSL - material label - 2 invisible front pockets - closure with 3 hooks that open in large and folds to get stuck - a small lack of pile under the left arm barely visible - shoulder dimensions 46 cm underarm 50 cm sleeve 56 cm height 81 cm"
   },
   {
-    name : "",
-    id : "",
-    photo : "/images/.jpg",
-    type : "",
-    size : "",
-    colour : "",
-    join : "",
-    para : ""
+    name : "Emilio Pucci Patterned Quilted Jacket",
+    id : "j115",
+    price : 93.50,
+    photo : "/images/fancyQuilted.jpg",
+    type : "puffer",
+    size : "M",
+    colour : "white , light blue , and gold",
+    join : "zip",
+    para : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 ];
 
 console.log(jackets)
+
+
+for (var i=0; i<15; i++){
+  document.getElementById('cardContainer').innerHTML +=
+    '<div class="col">' +
+    '<div class="card" style="width: 18rem;">' +
+    '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+    '<div class="card-body">' +
+    '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+    '<p class="card-text">' +
+    '$' + jackets[i].price + '<br>'
+    '</p>' +
+    '</div>' +
+    '</div>' +
+    '</div>'
+}
