@@ -169,8 +169,9 @@ var jackets = [
 
 console.log(jackets)
 
-
+//
 for (var i=0; i<15; i++){
+
   document.getElementById('cardContainer').innerHTML +=
     '<div class="col">' +
     '<div class="card" style="width: 18rem;">' +
