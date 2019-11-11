@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Nathan's Bootleg Jackets</title>
   </head>
@@ -15,7 +15,7 @@
 
     <!-- NAV BAR -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"> <img src="/images/1x/logo.png" alt="Nathan's Bootleg Jackets"> </a>
+    <a class="navbar-brand" href="index.html"> <img src="images/1x/logo.png" alt="Nathan's Bootleg Jackets"> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,9 +26,9 @@
             Size
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">S</a>
-            <a class="dropdown-item" href="#">M</a>
-            <a class="dropdown-item" href="#">L</a>
+            <p id="s" class="dropdown-item">S</p>
+            <p id="m" class="dropdown-item">M</p>
+            <p id="l" class="dropdown-item">L</p>
           </div>
         </li> <!-- drop down ends here -->
 
@@ -37,12 +37,13 @@
             Colour
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <p id="green" class="dropdown-item">Green</p>
+            <p id="brown" class="dropdown-item">Brown</p>
+            <p id="grey" class="dropdown-item">Grey</p>
+            <p id="red" class="dropdown-item">Red</p>
+            <p id="white" class="dropdown-item">White</p>
+            <p id="blue" class="dropdown-item">Blue</p>
+            <p id="black" class="dropdown-item">Black</p>
           </div>
         </li> <!-- drop down ends here -->
 
@@ -58,11 +59,37 @@
   </div>
 
 
+
+  <!-- Modal -->
+  <div id="myModal" class="myModal">
+    <div class="myModal-close">&times</div>
+    <div class="myModal-picture">
+      <img src="images/duffle.jpg" alt="">
+    </div>
+    <div id="modalContent" class="myModal-content">
+      <h1>title</h1>
+      <h2>
+        price
+        <br>  <br>
+        Type:
+        <br>
+        Size:
+        <br>
+        Colour:
+        <br>
+        Join:
+        <br> <br>
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

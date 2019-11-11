@@ -4,7 +4,7 @@ var jackets = [
     name : "Flight Bomber Jacket",
     id : "j101",
     price : 23,
-    photo : "/images/airForce.jpeg",
+    photo : "images/airForce.jpeg",
     type : "bomber jacket",
     size : "M",
     colour : "olive green",
@@ -15,7 +15,7 @@ var jackets = [
     name : "Acne Studios Leather Jacket",
     id : "j102",
     price : 25,
-    photo : "/images/leather.jpg",
+    photo : "images/leather.jpg",
     type : "leather jacket",
     size : "L",
     colour : "brown",
@@ -26,7 +26,7 @@ var jackets = [
     name : "Gloverall Duffle Coat",
     id : "j103",
     price : 36,
-    photo : "/images/duffle.jpg",
+    photo : "images/duffle.jpg",
     type : "duffle coat",
     size : "L",
     colour : "dark grey",
@@ -37,7 +37,7 @@ var jackets = [
     name : "Ecocult Vintage Leather Jacket",
     id : "j104",
     price : 6,
-    photo : "/images/vintageLeather.jpg",
+    photo : "images/vintageLeather.jpg",
     type : "leather jacket",
     size : "S",
     colour : "red",
@@ -48,7 +48,7 @@ var jackets = [
     name : "Belstaff Biker Jacket",
     id : "j105",
     price : 28,
-    photo : "/images/biker.jpg",
+    photo : "images/biker.jpg",
     type : "biker jacket",
     size : "M",
     colour : "white",
@@ -59,7 +59,7 @@ var jackets = [
     name : "Barbour Hereford Wax Jacket",
     id : "j106",
     price : 36,
-    photo : "/images/waxed.jpg",
+    photo : "images/waxed.jpg",
     type : "waxed jacket",
     size : "L",
     colour : "dark brown",
@@ -70,7 +70,7 @@ var jackets = [
     name : "Topman Denim Jacket",
     id : "j107",
     price : 32,
-    photo : "/images/denim.jpeg",
+    photo : "images/denim.jpeg",
     type : "denim jacket",
     size : "S",
     colour : "blue",
@@ -81,7 +81,7 @@ var jackets = [
     name : "Vintage Shearling Trucker Jacket",
     id : "j108",
     price : 28,
-    photo : "/images/sherling.jpg",
+    photo : "images/sherling.jpg",
     type : "searling jacket",
     size : "S",
     colour : "brown",
@@ -92,7 +92,7 @@ var jackets = [
     name : "Converse Puffer Jacket",
     id : "j109",
     price : 15.50,
-    photo : "/images/puffer.jpg",
+    photo : "images/puffer.jpg",
     type : "puffer",
     size : "S",
     colour : "black",
@@ -103,7 +103,7 @@ var jackets = [
     name : "UrbanCrews Long Sleeve Hooded Denim Jacket",
     id : "j110",
     price : 31,
-    photo : "/images/hoodedDenim.jpg",
+    photo : "images/hoodedDenim.jpg",
     type : "denim jacket",
     size : "M",
     colour : "blue and grey",
@@ -114,7 +114,7 @@ var jackets = [
     name : "Firetrap Quilted Bomber Jacket",
     id : "j111",
     price : 14,
-    photo : "/images/quilted.jpg",
+    photo : "images/quilted.jpg",
     type : "bomber jacket",
     size : "S",
     colour : "dark green",
@@ -125,7 +125,7 @@ var jackets = [
     name : "Pilot Pete Leather Flight Jacket",
     id : "j112",
     price : 42,
-    photo : "/images/leatherFlight.jpg",
+    photo : "images/leatherFlight.jpg",
     type : "bomber jacket",
     size : "S",
     colour : "dark brown and saddle brown",
@@ -136,7 +136,7 @@ var jackets = [
     name : "Lightweight, Waterproof Hi-Vis Jacket",
     id : "j113",
     price : 34,
-    photo : "/images/hiVis.jpg",
+    photo : "images/hiVis.jpg",
     type : "hi-vis jacket",
     size : "L",
     colour : "slate blue and fluro orange",
@@ -147,7 +147,7 @@ var jackets = [
     name : "Yves Saint Laurent Fur Coat",
     id : "j114",
     price : 4,
-    photo : "/images/fur.jpeg",
+    photo : "images/fur.jpeg",
     type : "fur coat",
     size : "M",
     colour : "brown",
@@ -158,7 +158,7 @@ var jackets = [
     name : "Emilio Pucci Patterned Quilted Jacket",
     id : "j115",
     price : 93.50,
-    photo : "/images/fancyQuilted.jpg",
+    photo : "images/fancyQuilted.jpg",
     type : "puffer",
     size : "M",
     colour : "white , light blue , and gold",
@@ -169,13 +169,15 @@ var jackets = [
 
 console.log(jackets)
 
-//
-for (var i=0; i<15; i++){
+var id = 101;
+
+//LANDING PAGE
+for (var i=0; i<jackets.length; i++){
 
   document.getElementById('cardContainer').innerHTML +=
     '<div class="col">' +
     '<div class="card" style="width: 18rem;">' +
-    '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+    '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
     '<div class="card-body">' +
     '<h2 class="card-text">' + jackets[i].name + '</h2>' +
     '<p class="card-text">' +
@@ -183,5 +185,321 @@ for (var i=0; i<15; i++){
     '</p>' +
     '</div>' +
     '</div>' +
-    '</div>'
-}
+    '</div>';
+    id++
+};
+
+
+$('.card-img-top').on('click', function(){
+  console.log(this.id);
+  $('.myModal').show();
+  for (var i = 0; i < jackets.length; i++){
+    //id property of the dog is checked for equivalance with the image id of the clicked element.
+    if (jackets[i].id.trim() == this.id.trim()){
+      document.getElementById('myModal').innerHTML =
+        '<div class="myModal-close">&times</div>' +
+        '<div class="myModal-picture">' +
+          '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '</div>' +
+        '<div id="modalContent" class="myModal-content">' +
+          '<h1>' + jackets[i].name + '</h1>' +
+          '<h2>' +
+            "$" + jackets[i].price +
+            '<br>' + '<br>' +
+            "type: " + jackets[i].type +
+            '<br>' +
+            "size: " + jackets[i].size +
+            '<br>' +
+            "colour: " + jackets[i].colour +
+            '<br>' +
+            "join: " + jackets[i].join +
+            '<br>' + '<br>' +
+            '</h2>' +
+            '<p>' + jackets[i].para + '</p>' +
+        '</div>'
+    }
+  }
+});
+
+$('.myModal-close').on('click', function(){
+  $('.myModal').hide();
+})
+
+
+
+
+
+
+// SMALL SIZE FILTER
+document.getElementById('s').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    if (jackets[i].size == "S") {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+  };
+}); // small size ends here
+
+
+// MEDIUM SIZE FILTER
+document.getElementById('m').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    if (jackets[i].size == "M") {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+  };
+}); // medium size ends here
+
+
+// LARGE SIZE FILTER
+document.getElementById('l').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    if (jackets[i].size == "L") {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+  };
+}); // large size ends here
+
+
+
+// GREEN FILTER
+document.getElementById('green').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    var n = jackets[i].colour.includes("green")
+    if (n === true) {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else if (n === false) {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+
+  };
+}); // green filter ends here
+
+
+// BROWN FILTER
+document.getElementById('brown').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    var n = jackets[i].colour.includes("brown")
+    if (n === true) {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else if (n === false) {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+
+  };
+}); // brown filter ends here
+
+
+// GREY FILTER
+document.getElementById('grey').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    var n = jackets[i].colour.includes("grey")
+    if (n === true) {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else if (n === false) {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+
+  };
+}); // grey filter ends here
+
+
+// RED FILTER
+document.getElementById('red').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    var n = jackets[i].colour.includes("red")
+    if (n === true) {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else if (n === false) {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+
+  };
+}); // red filter ends here
+
+
+// WHITE FILTER
+document.getElementById('white').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    var n = jackets[i].colour.includes("white")
+    if (n === true) {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else if (n === false) {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+
+  };
+}); // white filter ends here
+
+
+// BLUE FILTER
+document.getElementById('blue').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    var n = jackets[i].colour.includes("blue")
+    if (n === true) {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else if (n === false) {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+
+  };
+}); // blue filter ends here
+
+
+// BLACK FILTER
+document.getElementById('black').addEventListener('click', function(){
+
+  document.getElementById('cardContainer').innerHTML = "";
+
+  for (var i=0; i<jackets.length; i++){
+    var n = jackets[i].colour.includes("black")
+    if (n === true) {
+      document.getElementById('cardContainer').innerHTML +=
+        '<div class="col">' +
+        '<div class="card" style="width: 18rem;">' +
+        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+        '<div class="card-body">' +
+        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+        '<p class="card-text">' +
+        '$' + jackets[i].price + '<br>'
+        '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    } else if (n === false) {
+      document.getElementById('cardContainer').innerHTML += "";
+    }
+
+  };
+}); // black filter ends here
