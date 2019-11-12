@@ -167,13 +167,11 @@ var jackets = [
   }
 ];
 
-console.log(jackets)
+console.log(jackets);
 
 var id = 101;
 
-//LANDING PAGE
-for (var i=0; i<jackets.length; i++){
-
+function displayCard(){
   document.getElementById('cardContainer').innerHTML +=
     '<div class="col">' +
     '<div class="card" style="width: 18rem;">' +
@@ -181,15 +179,21 @@ for (var i=0; i<jackets.length; i++){
     '<div class="card-body">' +
     '<h2 class="card-text">' + jackets[i].name + '</h2>' +
     '<p class="card-text">' +
-    '$' + jackets[i].price + '<br>'
+    '$' + jackets[i].price + '<br>' +
     '</p>' +
     '</div>' +
     '</div>' +
     '</div>';
-    id++
-};
+    id++;
+}
+
+// LANDING PAGE
+for (var i=0; i<jackets.length; i++){
+  displayCard();
+}
 
 
+// MODAL
 $('.card-img-top').on('click', function(){
   console.log(this.id);
   $('.myModal').show();
@@ -216,14 +220,14 @@ $('.card-img-top').on('click', function(){
             '<br>' + '<br>' +
             '</h2>' +
             '<p>' + jackets[i].para + '</p>' +
-        '</div>'
+        '</div>';
     }
   }
 });
 
 $('.myModal-close').on('click', function(){
   $('.myModal').hide();
-})
+});
 
 
 
@@ -237,18 +241,20 @@ document.getElementById('s').addEventListener('click', function(){
 
   for (var i=0; i<jackets.length; i++){
     if (jackets[i].size == "S") {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+    //displayCard()
+    document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -263,18 +269,20 @@ document.getElementById('m').addEventListener('click', function(){
 
   for (var i=0; i<jackets.length; i++){
     if (jackets[i].size == "M") {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+    //displayCard();
+    document.getElementById('cardContainer').innerHTML +=
+      '<div class="col">' +
+      '<div class="card" style="width: 18rem;">' +
+      '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+      '<div class="card-body">' +
+      '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+      '<p class="card-text">' +
+      '$' + jackets[i].price + '<br>' +
+      '</p>' +
+      '</div>' +
+      '</div>' +
+      '</div>';
+      id++;
     } else {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -289,18 +297,20 @@ document.getElementById('l').addEventListener('click', function(){
 
   for (var i=0; i<jackets.length; i++){
     if (jackets[i].size == "L") {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+    //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -317,18 +327,20 @@ document.getElementById('green').addEventListener('click', function(){
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("green")
     if (n === true) {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else if (n === false) {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -345,18 +357,20 @@ document.getElementById('brown').addEventListener('click', function(){
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("brown")
     if (n === true) {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else if (n === false) {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -373,18 +387,20 @@ document.getElementById('grey').addEventListener('click', function(){
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("grey")
     if (n === true) {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else if (n === false) {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -401,18 +417,20 @@ document.getElementById('red').addEventListener('click', function(){
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("red")
     if (n === true) {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else if (n === false) {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -429,18 +447,20 @@ document.getElementById('white').addEventListener('click', function(){
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("white")
     if (n === true) {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else if (n === false) {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -457,18 +477,20 @@ document.getElementById('blue').addEventListener('click', function(){
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("blue")
     if (n === true) {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else if (n === false) {
       document.getElementById('cardContainer').innerHTML += "";
     }
@@ -485,21 +507,47 @@ document.getElementById('black').addEventListener('click', function(){
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("black")
     if (n === true) {
-      document.getElementById('cardContainer').innerHTML +=
-        '<div class="col">' +
-        '<div class="card" style="width: 18rem;">' +
-        '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '<div class="card-body">' +
-        '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-        '<p class="card-text">' +
-        '$' + jackets[i].price + '<br>'
-        '</p>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+      //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;;
     } else if (n === false) {
       document.getElementById('cardContainer').innerHTML += "";
     }
 
   };
 }); // black filter ends here
+
+
+
+// SORT FUNCTION
+document.getElementById('sort').addEventListener('click', function(){
+  document.getElementById('cardContainer').innerHTML = "";
+  jackets.price.sort();
+  for (var i=0; i<jackets.length; i++){
+    //displayCard();
+document.getElementById('cardContainer').innerHTML +=
+  '<div class="col">' +
+  '<div class="card" style="width: 18rem;">' +
+  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+  '<div class="card-body">' +
+  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
+  '<p class="card-text">' +
+  '$' + jackets[i].price + '<br>' +
+  '</p>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  id++;
+  };
+});
