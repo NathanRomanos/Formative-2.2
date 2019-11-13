@@ -59,7 +59,8 @@
     height: 100%;
     padding: 2%;
     background-color: #352727;
-    float: left; }
+    float: left;
+    pointer-events: none; }
 
 @media (max-width: 500px) {
   .myModal .myModal-close {

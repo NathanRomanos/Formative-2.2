@@ -185,7 +185,7 @@ function displayCard(){
     '</div>' +
     '</div>';
     id++;
-}
+};
 
 // LANDING PAGE
 for (var i=0; i<jackets.length; i++){
@@ -223,11 +223,12 @@ $('.card-img-top').on('click', function(){
         '</div>';
     }
   }
+  $('.myModal-close').on('click', function(){
+    $('.myModal').hide();
+  });
 });
 
-$('.myModal-close').on('click', function(){
-  $('.myModal').hide();
-});
+
 
 
 
@@ -241,7 +242,7 @@ document.getElementById('s').addEventListener('click', function(){
 
   for (var i=0; i<jackets.length; i++){
     if (jackets[i].size == "S") {
-    //displayCard()
+    // displayCard();
     document.getElementById('cardContainer').innerHTML +=
   '<div class="col">' +
   '<div class="card" style="width: 18rem;">' +
