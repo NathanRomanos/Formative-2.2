@@ -171,7 +171,8 @@ console.log(jackets);
 
 var id = 101;
 
-function displayCard(){
+function displayCard(i){
+  // id = 101;
   document.getElementById('cardContainer').innerHTML +=
     '<div class="col">' +
     '<div class="card" style="width: 18rem;">' +
@@ -184,51 +185,56 @@ function displayCard(){
     '</div>' +
     '</div>' +
     '</div>';
-    id++;
+    // id++;
 };
 
 // LANDING PAGE
 for (var i=0; i<jackets.length; i++){
-  displayCard();
+  displayCard(i);
+  id++;
 }
 
 
 // MODAL
-$('.card-img-top').on('click', function(){
-  console.log(this.id);
-  $('.myModal').show();
-  for (var i = 0; i < jackets.length; i++){
-    //id property of the dog is checked for equivalance with the image id of the clicked element.
-    if (jackets[i].id.trim() == this.id.trim()){
-      document.getElementById('myModal').innerHTML =
-        '<div class="myModal-close">&times</div>' +
-        '<div class="myModal-picture">' +
-          '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-        '</div>' +
-        '<div id="modalContent" class="myModal-content">' +
-          '<h1>' + jackets[i].name + '</h1>' +
-          '<h2>' +
-            "$" + jackets[i].price +
-            '<br>' + '<br>' +
-            "type: " + jackets[i].type +
-            '<br>' +
-            "size: " + jackets[i].size +
-            '<br>' +
-            "colour: " + jackets[i].colour +
-            '<br>' +
-            "join: " + jackets[i].join +
-            '<br>' + '<br>' +
-            '</h2>' +
-            '<p>' + jackets[i].para + '</p>' +
-        '</div>';
+function modal(){
+
+  $('.card-img-top').on('click', function(){
+    console.log(this.id);
+    $('.myModal').show();
+    for (var i = 0; i < jackets.length; i++){
+      //id property of the dog is checked for equivalance with the image id of the clicked element.
+      if (jackets[i].id.trim() == this.id.trim()){
+        document.getElementById('myModal').innerHTML =
+          '<div class="myModal-close">&times</div>' +
+          '<div class="myModal-picture">' +
+            '<img src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
+          '</div>' +
+          '<div id="modalContent" class="myModal-content">' +
+            '<h1>' + jackets[i].name + '</h1>' +
+            '<h2>' +
+              "$" + jackets[i].price +
+              '<br>' + '<br>' +
+              "type: " + jackets[i].type +
+              '<br>' +
+              "size: " + jackets[i].size +
+              '<br>' +
+              "colour: " + jackets[i].colour +
+              '<br>' +
+              "join: " + jackets[i].join +
+              '<br>' + '<br>' +
+              '</h2>' +
+              '<p>' + jackets[i].para + '</p>' +
+          '</div>';
+      }
     }
-  }
-  $('.myModal-close').on('click', function(){
-    $('.myModal').hide();
+    $('.myModal-close').on('click', function(){
+      $('.myModal').hide();
+    });
   });
-});
 
+};
 
+modal();
 
 
 
@@ -237,28 +243,15 @@ $('.card-img-top').on('click', function(){
 
 // SMALL SIZE FILTER
 document.getElementById('s').addEventListener('click', function(){
-
+  console.log('small')
   document.getElementById('cardContainer').innerHTML = "";
-
+  id = 101;
   for (var i=0; i<jackets.length; i++){
     if (jackets[i].size == "S") {
-    // displayCard();
-    document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
+  id++;
   };
 }); // small size ends here
 
@@ -267,27 +260,14 @@ document.getElementById('s').addEventListener('click', function(){
 document.getElementById('m').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+id = 101;
   for (var i=0; i<jackets.length; i++){
     if (jackets[i].size == "M") {
-    //displayCard();
-    document.getElementById('cardContainer').innerHTML +=
-      '<div class="col">' +
-      '<div class="card" style="width: 18rem;">' +
-      '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-      '<div class="card-body">' +
-      '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-      '<p class="card-text">' +
-      '$' + jackets[i].price + '<br>' +
-      '</p>' +
-      '</div>' +
-      '</div>' +
-      '</div>';
-      id++;
-    } else {
-      document.getElementById('cardContainer').innerHTML += "";
+    displayCard(i);
+    modal();
     }
-  };
+    id++;
+  }
 }); // medium size ends here
 
 
@@ -295,27 +275,14 @@ document.getElementById('m').addEventListener('click', function(){
 document.getElementById('l').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id=101;
   for (var i=0; i<jackets.length; i++){
     if (jackets[i].size == "L") {
-    //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else {
-      document.getElementById('cardContainer').innerHTML += "";
+    displayCard(i);
+    modal();
     }
-  };
+    id++
+  }
 }); // large size ends here
 
 
@@ -324,28 +291,14 @@ document.getElementById('cardContainer').innerHTML +=
 document.getElementById('green').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id = 101;
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("green")
     if (n === true) {
-      //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else if (n === false) {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
-
+    id++;
   };
 }); // green filter ends here
 
@@ -354,28 +307,14 @@ document.getElementById('cardContainer').innerHTML +=
 document.getElementById('brown').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id = 101;
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("brown")
     if (n === true) {
-      //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else if (n === false) {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
-
+    id++;
   };
 }); // brown filter ends here
 
@@ -384,28 +323,14 @@ document.getElementById('cardContainer').innerHTML +=
 document.getElementById('grey').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id = 101;
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("grey")
     if (n === true) {
-      //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else if (n === false) {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
-
+  id++;
   };
 }); // grey filter ends here
 
@@ -414,28 +339,14 @@ document.getElementById('cardContainer').innerHTML +=
 document.getElementById('red').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id=101;
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("red")
     if (n === true) {
-      //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else if (n === false) {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
-
+    id++;
   };
 }); // red filter ends here
 
@@ -444,28 +355,14 @@ document.getElementById('cardContainer').innerHTML +=
 document.getElementById('white').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id=101;
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("white")
     if (n === true) {
-      //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else if (n === false) {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
-
+    id++;
   };
 }); // white filter ends here
 
@@ -474,28 +371,14 @@ document.getElementById('cardContainer').innerHTML +=
 document.getElementById('blue').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id=101;
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("blue")
     if (n === true) {
-      //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else if (n === false) {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
-
+    id++;
   };
 }); // blue filter ends here
 
@@ -504,28 +387,14 @@ document.getElementById('cardContainer').innerHTML +=
 document.getElementById('black').addEventListener('click', function(){
 
   document.getElementById('cardContainer').innerHTML = "";
-
+  id=101;
   for (var i=0; i<jackets.length; i++){
     var n = jackets[i].colour.includes("black")
     if (n === true) {
-      //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;;
-    } else if (n === false) {
-      document.getElementById('cardContainer').innerHTML += "";
+      displayCard(i);
+      modal();
     }
-
+    id++;
   };
 }); // black filter ends here
 
@@ -534,7 +403,16 @@ document.getElementById('cardContainer').innerHTML +=
 // SORT FUNCTION
 document.getElementById('sort').addEventListener('click', function(){
   document.getElementById('cardContainer').innerHTML = "";
-  jackets.price.sort();
+  jackets.sort(compare);
+
+  function compare(a,b){
+    if (a.price > b.price){
+      return 1;
+
+    } else if (a.price < b.price){
+      return -1;
+    }
+  }
   for (var i=0; i<jackets.length; i++){
     //displayCard();
 document.getElementById('cardContainer').innerHTML +=
