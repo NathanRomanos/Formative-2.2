@@ -403,6 +403,7 @@ document.getElementById('black').addEventListener('click', function(){
 // SORT FUNCTION
 document.getElementById('sort').addEventListener('click', function(){
   document.getElementById('cardContainer').innerHTML = "";
+  id=101;
   jackets.sort(compare);
 
   function compare(a,b){
@@ -414,19 +415,8 @@ document.getElementById('sort').addEventListener('click', function(){
     }
   }
   for (var i=0; i<jackets.length; i++){
-    //displayCard();
-document.getElementById('cardContainer').innerHTML +=
-  '<div class="col">' +
-  '<div class="card" style="width: 18rem;">' +
-  '<img id="j' + id.toString() +'" src="' + jackets[i].photo + '" class="card-img-top" alt="Jacket">' +
-  '<div class="card-body">' +
-  '<h2 class="card-text">' + jackets[i].name + '</h2>' +
-  '<p class="card-text">' +
-  '$' + jackets[i].price + '<br>' +
-  '</p>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
-  id++;
+    displayCard(i);
+    modal();
+    id++;
   };
 });
